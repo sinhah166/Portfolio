@@ -20,7 +20,7 @@ export default function Hero() {
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-white mb-6">
             Hi, I'm{' '}
             <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-              Your Name
+              Harshit Sinha
             </span>
           </h1>
           <p className="text-xl sm:text-2xl text-slate-300 mb-8 max-w-2xl mx-auto">
@@ -31,28 +31,15 @@ export default function Hero() {
           </p>
 
           <div className="flex items-center justify-center gap-4 mb-12">
-            <a
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 bg-white/10 hover:bg-white/20 rounded-full transition-all hover:scale-110"
-            >
+            <div className="p-3 bg-white/10 rounded-full">
               <Github className="text-white" size={24} />
-            </a>
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 bg-white/10 hover:bg-white/20 rounded-full transition-all hover:scale-110"
-            >
+            </div>
+            <div className="p-3 bg-white/10 rounded-full">
               <Linkedin className="text-white" size={24} />
-            </a>
-            <a
-              href="mailto:your.email@example.com"
-              className="p-3 bg-white/10 hover:bg-white/20 rounded-full transition-all hover:scale-110"
-            >
+            </div>
+            <div className="p-3 bg-white/10 rounded-full">
               <Mail className="text-white" size={24} />
-            </a>
+            </div>
           </div>
 
           <button

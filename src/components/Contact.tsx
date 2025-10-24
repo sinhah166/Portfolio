@@ -56,9 +56,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <div className="text-sm text-slate-500">Email</div>
-                  <a href="mailto:your.email@example.com" className="font-medium hover:text-blue-600 transition-colors">
-                    your.email@example.com
-                  </a>
+                  <div className="font-medium">your.email@example.com</div>
                 </div>
               </div>
 
@@ -76,22 +74,12 @@ export default function Contact() {
             <div className="pt-6">
               <h4 className="text-lg font-semibold text-slate-900 mb-4">Follow Me</h4>
               <div className="flex gap-4">
-                <a
-                  href="https://github.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-md hover:shadow-xl transition-all hover:-translate-y-1"
-                >
+                <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-md">
                   <Github className="text-slate-700" size={20} />
-                </a>
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-md hover:shadow-xl transition-all hover:-translate-y-1"
-                >
+                </div>
+                <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-md">
                   <Linkedin className="text-slate-700" size={20} />
-                </a>
+                </div>
               </div>
             </div>
           </div>
@@ -169,7 +157,7 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center text-slate-600">
             <p>Built with React, TypeScript, and Tailwind CSS</p>
-            <p className="mt-2">© 2024 Your Name. All rights reserved.</p>
+            <p className="mt-2">© 2024 Harshit Sinha. All rights reserved.</p>
           </div>
         </div>
       </footer>

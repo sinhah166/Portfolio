@@ -100,24 +100,14 @@ export default function Projects() {
                 </div>
 
                 <div className="flex items-center gap-4">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-slate-600 hover:text-slate-900 transition-colors"
-                  >
+                  <div className="flex items-center gap-2 text-slate-600">
                     <Github size={18} />
                     <span className="text-sm font-medium">Code</span>
-                  </a>
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-blue-600 hover:text-blue-700 transition-colors"
-                  >
+                  </div>
+                  <div className="flex items-center gap-2 text-blue-600">
                     <ExternalLink size={18} />
                     <span className="text-sm font-medium">Live Demo</span>
-                  </a>
+                  </div>
                 </div>
               </div>
             </div>
