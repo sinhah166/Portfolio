@@ -24,22 +24,35 @@ export default function Hero() {
             </span>
           </h1>
           <p className="text-xl sm:text-2xl text-slate-300 mb-8 max-w-2xl mx-auto">
-            Full Stack Developer & Creative Problem Solver
+            Developer & Creative Problem Solver
           </p>
           <p className="text-lg text-slate-400 mb-12 max-w-xl mx-auto">
             Building beautiful, functional web experiences that make a difference
           </p>
 
           <div className="flex items-center justify-center gap-4 mb-12">
-            <div className="p-3 bg-white/10 rounded-full">
+            <a
+              href="https://github.com/sinhah166"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 bg-white/10 hover:bg-white/20 rounded-full transition-all hover:scale-110"
+            >
               <Github className="text-white" size={24} />
-            </div>
-            <div className="p-3 bg-white/10 rounded-full">
+            </a>
+            <a
+              href="https://www.linkedin.com/in/harshit-sinha-3833172a1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 bg-white/10 hover:bg-white/20 rounded-full transition-all hover:scale-110"
+            >
               <Linkedin className="text-white" size={24} />
-            </div>
-            <div className="p-3 bg-white/10 rounded-full">
+            </a>
+            <a
+              href="mailto:sinhah166@gmail.com"
+              className="p-3 bg-white/10 hover:bg-white/20 rounded-full transition-all hover:scale-110"
+            >
               <Mail className="text-white" size={24} />
-            </div>
+            </a>
           </div>
 
           <button

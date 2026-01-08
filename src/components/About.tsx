@@ -35,25 +35,17 @@ export default function About() {
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
           <div className="space-y-6">
             <p className="text-lg text-slate-700 leading-relaxed">
-              I'm a passionate developer with a keen eye for design and a love for creating
-              exceptional digital experiences. With expertise in modern web technologies, I bring
-              ideas to life through clean, efficient code.
+              I'm a passionate developer with a strong eye for design and usability, focused on building clean, efficient, and impactful digital experiences. I enjoy turning ideas into well-crafted products using modern web technologies.
             </p>
             <p className="text-lg text-slate-700 leading-relaxed">
-              My journey in software development has equipped me with a diverse skill set,
-              enabling me to tackle challenges from both frontend aesthetics to backend
-              architecture. I thrive in collaborative environments and am always eager to learn
-              and grow.
+              With experience across frontend interfaces and backend systems, I'm comfortable solving problems end-to-end. I value clarity, collaboration, and continuous learning, and I'm always looking to grow by building things that actually matter.
             </p>
             <div className="flex flex-wrap gap-3">
               <span className="px-4 py-2 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">
-                5+ Years Experience
+                3+ Projects Completed
               </span>
               <span className="px-4 py-2 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">
-                50+ Projects Completed
-              </span>
-              <span className="px-4 py-2 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">
-                Available for Hire
+                Available to connect
               </span>
             </div>
           </div>

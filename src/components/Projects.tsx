@@ -3,56 +3,20 @@ import { ExternalLink, Github } from 'lucide-react';
 export default function Projects() {
   const projects = [
     {
-      title: 'E-Commerce Platform',
+      title: 'JPrint — On-Demand Printing Platform',
       description:
-        'A full-stack e-commerce solution with real-time inventory management, secure payment processing, and an intuitive admin dashboard.',
-      tags: ['React', 'Node.js', 'PostgreSQL', 'Stripe'],
+        'A web-based platform that simplifies printing for students by allowing them to upload documents, select print options, and place orders easily. It removes manual coordination and long waiting times, making the printing process fast and hassle-free.',
+      tags: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL'],
       image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800',
       github: 'https://github.com',
       live: 'https://example.com',
     },
     {
-      title: 'Task Management App',
+      title: 'RailQuick — Train Essentials & City Specials Platform',
       description:
-        'Collaborative project management tool with real-time updates, team chat, file sharing, and advanced analytics.',
-      tags: ['TypeScript', 'React', 'Supabase', 'Tailwind'],
+        'An on-demand train-commerce platform that enables passengers to order essentials, medicines, and city-special products during their journey using PNR-based ordering. It ensures accurate, timely delivery directly to the passenger\'s seat. The platform focuses on convenience, reliability, and smart logistics, solving the lack of organized onboard purchasing for train travelers.',
+      tags: ['React', 'Node.js', 'Express', 'MongoDB', 'AI/ML'],
       image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800',
-      github: 'https://github.com',
-      live: 'https://example.com',
-    },
-    {
-      title: 'Social Media Dashboard',
-      description:
-        'Analytics dashboard for tracking social media metrics across multiple platforms with beautiful data visualizations.',
-      tags: ['Vue.js', 'D3.js', 'Express', 'MongoDB'],
-      image: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800',
-      github: 'https://github.com',
-      live: 'https://example.com',
-    },
-    {
-      title: 'AI Content Generator',
-      description:
-        'AI-powered content creation tool that helps users generate blog posts, social media content, and marketing copy.',
-      tags: ['Next.js', 'OpenAI', 'Prisma', 'tRPC'],
-      image: 'https://images.pexels.com/photos/8438918/pexels-photo-8438918.jpeg?auto=compress&cs=tinysrgb&w=800',
-      github: 'https://github.com',
-      live: 'https://example.com',
-    },
-    {
-      title: 'Fitness Tracking App',
-      description:
-        'Mobile-first fitness application with workout tracking, nutrition logging, and personalized training plans.',
-      tags: ['React Native', 'Firebase', 'Redux', 'Chart.js'],
-      image: 'https://images.pexels.com/photos/4162491/pexels-photo-4162491.jpeg?auto=compress&cs=tinysrgb&w=800',
-      github: 'https://github.com',
-      live: 'https://example.com',
-    },
-    {
-      title: 'Real Estate Platform',
-      description:
-        'Property listing platform with advanced search filters, virtual tours, and integrated scheduling system.',
-      tags: ['React', 'GraphQL', 'AWS', 'Mapbox'],
-      image: 'https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=800',
       github: 'https://github.com',
       live: 'https://example.com',
     },

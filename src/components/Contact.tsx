@@ -7,18 +7,37 @@ export default function Contact() {
     email: '',
     message: '',
   });
-  const [status, setStatus] = useState<'idle' | 'sending' | 'sent'>('idle');
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('sending');
 
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    try {
+      const response = await fetch('https://formspree.io/f/xvgzekyb', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
+      });
 
-    setStatus('sent');
-    setFormData({ name: '', email: '', message: '' });
-
-    setTimeout(() => setStatus('idle'), 3000);
+      if (response.ok) {
+        setStatus('sent');
+        setFormData({ name: '', email: '', message: '' });
+        setTimeout(() => setStatus('idle'), 3000);
+      } else {
+        setStatus('error');
+        setTimeout(() => setStatus('idle'), 3000);
+      }
+    } catch (error) {
+      setStatus('error');
+      setTimeout(() => setStatus('idle'), 3000);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -56,7 +75,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <div className="text-sm text-slate-500">Email</div>
-                  <div className="font-medium">your.email@example.com</div>
+                  <div className="font-medium">sinhah166@gmail.com</div>
                 </div>
               </div>
 
@@ -66,7 +85,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <div className="text-sm text-slate-500">Location</div>
-                  <div className="font-medium">San Francisco, CA</div>
+                  <div className="font-medium">New Delhi</div>
                 </div>
               </div>
             </div>
@@ -74,12 +93,22 @@ export default function Contact() {
             <div className="pt-6">
               <h4 className="text-lg font-semibold text-slate-900 mb-4">Follow Me</h4>
               <div className="flex gap-4">
-                <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-md">
+                <a
+                  href="https://github.com/sinhah166"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-md hover:shadow-xl transition-all hover:-translate-y-1"
+                >
                   <Github className="text-slate-700" size={20} />
-                </div>
-                <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-md">
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/harshit-sinha-3833172a1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-md hover:shadow-xl transition-all hover:-translate-y-1"
+                >
                   <Linkedin className="text-slate-700" size={20} />
-                </div>
+                </a>
               </div>
             </div>
           </div>
@@ -141,6 +170,7 @@ export default function Contact() {
               >
                 {status === 'sending' && 'Sending...'}
                 {status === 'sent' && 'Message Sent!'}
+                {status === 'error' && 'Error sending message'}
                 {status === 'idle' && (
                   <>
                     Send Message
