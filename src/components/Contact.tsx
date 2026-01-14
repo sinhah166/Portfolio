@@ -190,7 +190,6 @@ export default function Contact() {
       <footer className="mt-24 pt-12 border-t border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center text-slate-600">
-            <p>Built with </p>
             <p className="mt-2">© 2026 Harshit Sinha. Build with ❤️</p>
           </div>
         </div>
