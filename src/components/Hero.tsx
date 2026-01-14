@@ -1,4 +1,5 @@
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
+import profilePhoto from '../assets/whatsapp_image_2026-01-14_at_11.27.14_pm.jpeg';
 
 export default function Hero() {
   const scrollToNext = () => {
@@ -70,7 +71,7 @@ export default function Hero() {
 
           <div className="hidden md:block animate-fade-in">
             <img
-              src="/src/assets/whatsapp_image_2026-01-14_at_11.27.14_pm.jpeg"
+              src={profilePhoto}
               alt="Harshit Sinha"
               className="w-full max-w-md mx-auto rounded-2xl shadow-2xl shadow-blue-500/30 hover:shadow-blue-500/50 transition-shadow"
             />
