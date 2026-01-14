@@ -191,7 +191,7 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center text-slate-600">
             <p>Built with React, TypeScript, and Tailwind CSS</p>
-            <p className="mt-2">© 2024 Harshit Sinha. All rights reserved.</p>
+            <p className="mt-2">© 2026 Harshit Sinha. All rights reserved.</p>
           </div>
         </div>
       </footer>
