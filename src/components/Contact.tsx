@@ -14,10 +14,14 @@ export default function Contact() {
     setStatus('sending');
 
     try {
-      const response = await fetch('https://formspree.io/f/xvgzekyb', {
+      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+      const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+
+      const response = await fetch(`${supabaseUrl}/functions/v1/send-email`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': `Bearer ${supabaseKey}`,
         },
         body: JSON.stringify({
           name: formData.name,

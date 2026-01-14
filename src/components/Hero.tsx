@@ -22,20 +22,20 @@ export default function Hero() {
         <div className="absolute -bottom-8 left-1/2 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000 opacity-70" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="animate-fade-in text-left md:text-left">
-            <h1 className="text-5xl sm:text-6xl md:text-6xl font-bold text-white mb-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-24">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div className="animate-fade-in text-center md:text-left">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 md:mb-6">
               Hi, I'm{' '}
               <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
                 Harshit Sinha
               </span>
             </h1>
-            <p className="text-xl sm:text-2xl text-slate-300 mb-8 max-w-xl">
+            <p className="text-lg sm:text-xl md:text-2xl text-slate-300 mb-8 md:mb-12 max-w-xl mx-auto md:mx-0">
               Developer & Creative Problem Solver
             </p>
 
-            <div className="flex items-center gap-4 mb-12">
+            <div className="flex items-center justify-center md:justify-start gap-4 mb-12">
               <a
                 href="https://github.com/sinhah166"
                 target="_blank"
@@ -69,11 +69,11 @@ export default function Hero() {
             </button>
           </div>
 
-          <div className="hidden md:block animate-fade-in">
+          <div className="animate-fade-in mt-8 md:mt-0">
             <img
               src={profilePhoto}
               alt="Harshit Sinha"
-              className="w-full max-w-md mx-auto rounded-2xl shadow-2xl shadow-blue-500/30 hover:shadow-blue-500/50 transition-shadow"
+              className="w-full max-w-xs sm:max-w-sm md:max-w-md mx-auto rounded-2xl shadow-2xl shadow-blue-500/30 hover:shadow-blue-500/50 transition-shadow"
             />
           </div>
         </div>
