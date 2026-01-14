@@ -36,7 +36,6 @@ function App() {
       <Hero />
       <About />
       <Projects />
-      <Skills />
       <Contact />
     </div>
   );

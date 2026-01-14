@@ -11,57 +11,70 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden"
     >
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-40" />
+      <div className="absolute inset-0 hero-gradient" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        <div className="animate-fade-in">
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-white mb-6">
-            Hi, I'm{' '}
-            <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-              Harshit Sinha
-            </span>
-          </h1>
-          <p className="text-xl sm:text-2xl text-slate-300 mb-8 max-w-2xl mx-auto">
-            Developer & Creative Problem Solver
-          </p>
-          <p className="text-lg text-slate-400 mb-12 max-w-xl mx-auto">
-            Building beautiful, functional web experiences that make a difference
-          </p>
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob opacity-70" />
+        <div className="absolute top-40 right-10 w-72 h-72 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000 opacity-70" />
+        <div className="absolute -bottom-8 left-1/2 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000 opacity-70" />
+      </div>
 
-          <div className="flex items-center justify-center gap-4 mb-12">
-            <a
-              href="https://github.com/sinhah166"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 bg-white/10 hover:bg-white/20 rounded-full transition-all hover:scale-110"
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="animate-fade-in text-left md:text-left">
+            <h1 className="text-5xl sm:text-6xl md:text-6xl font-bold text-white mb-6">
+              Hi, I'm{' '}
+              <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                Harshit Sinha
+              </span>
+            </h1>
+            <p className="text-xl sm:text-2xl text-slate-300 mb-8 max-w-xl">
+              Developer & Creative Problem Solver
+            </p>
+
+            <div className="flex items-center gap-4 mb-12">
+              <a
+                href="https://github.com/sinhah166"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-white/10 hover:bg-white/20 rounded-full transition-all hover:scale-110"
+              >
+                <Github className="text-white" size={24} />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/harshit-sinha-3833172a1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-white/10 hover:bg-white/20 rounded-full transition-all hover:scale-110"
+              >
+                <Linkedin className="text-white" size={24} />
+              </a>
+              <a
+                href="mailto:sinhah166@gmail.com"
+                className="p-3 bg-white/10 hover:bg-white/20 rounded-full transition-all hover:scale-110"
+              >
+                <Mail className="text-white" size={24} />
+              </a>
+            </div>
+
+            <button
+              onClick={scrollToNext}
+              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-full font-medium hover:shadow-2xl hover:shadow-blue-500/50 transition-all hover:scale-105"
             >
-              <Github className="text-white" size={24} />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/harshit-sinha-3833172a1"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 bg-white/10 hover:bg-white/20 rounded-full transition-all hover:scale-110"
-            >
-              <Linkedin className="text-white" size={24} />
-            </a>
-            <a
-              href="mailto:sinhah166@gmail.com"
-              className="p-3 bg-white/10 hover:bg-white/20 rounded-full transition-all hover:scale-110"
-            >
-              <Mail className="text-white" size={24} />
-            </a>
+              View My Work
+              <ArrowDown size={20} />
+            </button>
           </div>
 
-          <button
-            onClick={scrollToNext}
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-full font-medium hover:shadow-2xl hover:shadow-blue-500/50 transition-all hover:scale-105"
-          >
-            View My Work
-            <ArrowDown size={20} />
-          </button>
+          <div className="hidden md:block animate-fade-in">
+            <img
+              src="/src/assets/whatsapp_image_2026-01-14_at_11.27.14_pm.jpeg"
+              alt="Harshit Sinha"
+              className="w-full max-w-md mx-auto rounded-2xl shadow-2xl shadow-blue-500/30 hover:shadow-blue-500/50 transition-shadow"
+            />
+          </div>
         </div>
       </div>
 
