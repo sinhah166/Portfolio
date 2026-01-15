@@ -43,7 +43,7 @@ Deno.serve(async (req: Request) => {
       throw new Error(`Database error: ${insertError.message}`);
     }
 
-    const resendApiKey = Deno.env.get("RESEND_API_KEY");
+    const resendApiKey = Deno.env.get("re_fSRnMgmU_4HngEjgRZxhvYUEtncmiComj");
 
     if (resendApiKey) {
       try {
