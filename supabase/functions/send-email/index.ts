@@ -33,18 +33,21 @@ Deno.serve(async (req: Request) => {
 
     const supabase = createClient(supabaseUrl, supabaseKey);
 
-    await supabase.from("contact_messages").insert({
+    const { error: insertError } = await supabase.from("contact_messages").insert({
       name,
       email,
       message,
     });
 
-    const mailApiUrl = "https://api.resend.com/emails";
+    if (insertError) {
+      throw new Error(`Database error: ${insertError.message}`);
+    }
+
     const resendApiKey = Deno.env.get("RESEND_API_KEY");
 
     if (resendApiKey) {
       try {
-        await fetch(mailApiUrl, {
+        const emailResponse = await fetch("https://api.resend.com/emails", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -71,8 +74,13 @@ Deno.serve(async (req: Request) => {
             `,
           }),
         });
+
+        if (!emailResponse.ok) {
+          const emailError = await emailResponse.json();
+          console.error("Resend API error:", emailError);
+        }
       } catch (emailError) {
-        console.log("Email service not available, but message saved to database");
+        console.error("Email sending error:", emailError);
       }
     }
 
