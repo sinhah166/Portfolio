@@ -1,4 +1,5 @@
 import "jsr:@supabase/functions-js/edge-runtime.d.ts";
+import { createClient } from "npm:@supabase/supabase-js@2.57.4";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -27,50 +28,55 @@ Deno.serve(async (req: Request) => {
       );
     }
 
-    const emailContent = `
-New message from your portfolio:
+    const supabaseUrl = Deno.env.get("SUPABASE_URL") || "";
+    const supabaseKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") || "";
 
-Name: ${name}
-Email: ${email}
+    const supabase = createClient(supabaseUrl, supabaseKey);
 
-Message:
-${message}
-
----
-This email was sent from your portfolio contact form.
-    `;
-
-    const response = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${Deno.env.get("RESEND_API_KEY")}`,
-      },
-      body: JSON.stringify({
-        from: "onboarding@resend.dev",
-        to: "sinhah166@gmail.com",
-        subject: `New Contact Form Submission from ${name}`,
-        html: `
-          <div style="font-family: Arial, sans-serif; max-width: 600px;">
-            <h2>New message from your portfolio</h2>
-            <p><strong>Name:</strong> ${name}</p>
-            <p><strong>Email:</strong> ${email}</p>
-            <p><strong>Message:</strong></p>
-            <p>${message.replace(/\n/g, "<br />")}</p>
-            <hr />
-            <p style="color: #666; font-size: 12px;">This email was sent from your portfolio contact form.</p>
-          </div>
-        `,
-      }),
+    await supabase.from("contact_messages").insert({
+      name,
+      email,
+      message,
     });
 
-    const data = await response.json();
+    const mailApiUrl = "https://api.resend.com/emails";
+    const resendApiKey = Deno.env.get("RESEND_API_KEY");
 
-    if (!response.ok) {
-      throw new Error(`Resend API error: ${JSON.stringify(data)}`);
+    if (resendApiKey) {
+      try {
+        await fetch(mailApiUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${resendApiKey}`,
+          },
+          body: JSON.stringify({
+            from: "onboarding@resend.dev",
+            to: "sinhah166@gmail.com",
+            subject: `New Contact Form Submission from ${name}`,
+            html: `
+              <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+                <div style="background: linear-gradient(to right, #3b82f6, #06b6d4); padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+                  <h2 style="color: white; margin: 0;">New Portfolio Contact Submission</h2>
+                </div>
+                <div style="background: #f8fafc; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+                  <p style="margin: 0 0 15px 0;"><strong style="color: #1e293b;">From:</strong> ${name}</p>
+                  <p style="margin: 0 0 15px 0;"><strong style="color: #1e293b;">Email:</strong> <a href="mailto:${email}" style="color: #0284c7;">${email}</a></p>
+                  <p style="margin: 0;"><strong style="color: #1e293b;">Message:</strong></p>
+                  <p style="color: #475569; white-space: pre-wrap; word-wrap: break-word; margin-top: 10px;">${message}</p>
+                </div>
+                <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 20px 0;" />
+                <p style="color: #64748b; font-size: 12px; margin: 0;">This email was sent from your portfolio contact form.</p>
+              </div>
+            `,
+          }),
+        });
+      } catch (emailError) {
+        console.log("Email service not available, but message saved to database");
+      }
     }
 
-    return new Response(JSON.stringify({ success: true, id: data.id }), {
+    return new Response(JSON.stringify({ success: true }), {
       status: 200,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });

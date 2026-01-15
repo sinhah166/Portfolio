@@ -1,5 +1,3 @@
-import { ExternalLink, Github } from 'lucide-react';
-
 export default function Projects() {
   const projects = [
     {
@@ -52,7 +50,7 @@ export default function Projects() {
                 <h3 className="text-xl font-bold text-slate-900 mb-3">{project.title}</h3>
                 <p className="text-slate-600 mb-4 line-clamp-3">{project.description}</p>
 
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag, tagIndex) => (
                     <span
                       key={tagIndex}
@@ -61,17 +59,6 @@ export default function Projects() {
                       {tag}
                     </span>
                   ))}
-                </div>
-
-                <div className="flex items-center gap-4">
-                  <div className="flex items-center gap-2 text-slate-600">
-                    <Github size={18} />
-                    <span className="text-sm font-medium">Code</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-blue-600">
-                    <ExternalLink size={18} />
-                    <span className="text-sm font-medium">Live Demo</span>
-                  </div>
                 </div>
               </div>
             </div>
