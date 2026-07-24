@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, MapPin, Send, Github, Linkedin } from 'lucide-react';
+import { Mail, MapPin, Send, Github, Linkedin, CheckCircle } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 
 // EmailJS credentials
@@ -169,8 +169,7 @@ export default function Contact() {
               >
                 {status === 'sending' && 'Sending...'}
                 {status === 'sent' && 'Message Sent!'}
-                {status === 'error' && 'Error sending message'}
-                {status === 'idle' && (
+                {(status === 'idle' || status === 'error') && (
                   <>
                     Send Message
                     <Send size={18} />
@@ -189,6 +188,20 @@ export default function Contact() {
           </div>
         </div>
       </footer>
+
+      {/* Toast Notification */}
+      <div
+        className={`fixed bottom-6 left-4 right-4 sm:left-auto sm:right-10 sm:bottom-10 z-50 transition-all duration-500 transform ${
+          status === 'sent'
+            ? 'translate-y-0 opacity-100 scale-100'
+            : 'translate-y-10 opacity-0 scale-95 pointer-events-none'
+        }`}
+      >
+        <div className="flex items-center justify-center gap-3 px-6 py-4 rounded-2xl shadow-2xl text-white font-medium bg-gradient-to-r from-emerald-500 to-teal-500 shadow-emerald-500/25">
+          <CheckCircle className="text-white w-6 h-6" />
+          <span>Message sent successfully!</span>
+        </div>
+      </div>
     </section>
   );
 }
