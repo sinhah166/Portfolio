@@ -37,38 +37,6 @@ A modern, responsive personal portfolio built with React, TypeScript & Tailwind 
 | 🎯 **Lucide Icons** | Beautiful Icon Set |
 | 📊 **Vercel Analytics** | Performance Tracking |
 
----
-
-## 📁 Project Structure
-
-```
-Portfolio/
-├── public/              # Static assets
-├── src/
-│   ├── assets/          # Images & media
-│   ├── components/
-│   │   ├── Hero.tsx         # Landing section
-│   │   ├── About.tsx        # About me section
-│   │   ├── Projects.tsx     # Project showcase
-│   │   ├── Contact.tsx      # Contact form
-│   │   └── Navigation.tsx   # Navbar
-│   ├── App.tsx          # Root component
-│   ├── main.tsx         # Entry point
-│   └── index.css        # Global styles
-├── index.html           # HTML template
-├── tailwind.config.js   # Tailwind configuration
-├── tsconfig.json        # TypeScript configuration
-└── vite.config.ts       # Vite configuration
-```
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- **Node.js** `>=18`
-- **npm** `>=9`
 
 ### Installation
 
@@ -118,13 +86,5 @@ Contributions are welcome! Feel free to open an issue or submit a pull request.
 [![Gmail](https://img.shields.io/badge/Gmail-sinhah166@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:sinhah166@gmail.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Harshit%20Sinha-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/harshit-sinha-3833172a1)
 [![GitHub](https://img.shields.io/badge/GitHub-sinhah166-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/sinhah166)
-
-</div>
-
----
-
-<div align="center">
-
-Made with ❤️ by **Harshit Sinha**
 
 </div>
