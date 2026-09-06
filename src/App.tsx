@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import Hero from './components/Hero';
 import About from './components/About';
 import Projects from './components/Projects';
@@ -38,6 +39,7 @@ function App() {
       <Projects />
       <Contact />
       <Analytics />
+      <SpeedInsights />
     </div>
   );
 }
